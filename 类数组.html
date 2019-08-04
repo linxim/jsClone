@@ -43,25 +43,44 @@
         // }
         // obj.push('b');
 
-            var obj={
-                "0":"a",
-                "1":"b",
-                "2":"c",
-                "3":{},
-                name:"abc",
-                age:123,
-                length:3,
-                push:Array.prototype.push,
-                splice:Array.prototype.splice
+        // var obj={
+        //     "0":"a",
+        //     "1":"b",
+        //     "2":"c",
+        //     "3":{},
+        //     name:"abc",
+        //     age:123,
+        //     length:3,
+        //     push:Array.prototype.push,
+        //     splice:Array.prototype.splice
+        // }
+        // obj.push([]);
+        // for(var prop in obj){
+        //     if(obj.hasOwnProperty(prop)){
+        //          if(typeof(obj[prop]===Array)){
+        //              console.log(obj[prop]);
+        //          }
+        //     }
+        // }
+
+        function type(target) {
+            var ret=typeof(target);
+            var template = {
+                "[object Array]": "array",
+                "[object Object]": "object",
+                "[object Number]": "number-object",
+                "[object Boolean]": "boolean-object",
+                "[object String]": "string-object"
             }
-            obj.push([]);
-            for(var prop in obj){
-                if(obj.hasOwnProperty(prop)){
-                     if(typeof(obj[prop]===Array)){
-                         console.log(obj[prop]);
-                     }
-                }
+            if (target === null) {
+                return "null";
+            }else  if (ret == "object") {
+                var str = Object.prototype.toString.call(target);
+                return template[str];
+            } else {
+                return ret;
             }
+        }
     </script>
 </body>
 

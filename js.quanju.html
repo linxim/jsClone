@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+     var a="a(域内)=2全局变量<br/>";
+     var b="b(域内)=222域内变量<br/>";
+     function f(){
+         var a="a(域内)=全局变量<br/>";
+         b="b(域内)=?域内变量<br/>"; //全部b的值
+         document.write(a);
+         document.write(b);
+
+     }
+     f();
+     document.write(a);
+     document.write(b);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+

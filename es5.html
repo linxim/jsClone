@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 基于es3.0+es5.0新增方法 -->
+    <!-- es5.0严格模式 那么es3.0和es5.0产生冲突的部分就是用es5.0,否则s会用es3.0 -->
+    <script>
+        //es5.0严格模式标准启动
+        "use strict";//必须在第一行,也可以写在函数里面，但必须是函数里面的第一行
+        // function test(){
+        //     console.log(arguments.callee);
+        // }
+        // test();
+        
+        // var obj={
+        //     dp1:{
+        //         jc:{
+        //             name:'abc',
+        //             age:123
+        //         },
+        //         deng:{
+        //             name:'xiaodeng',
+        //             age:234
+        //         }
+        //     },
+        //     dp2:{
+
+        //     }
+        // }
+        // with(obj.dp1.jc){
+        //     console.log(name);
+        // }
+        // with(obj.dp1.deng){
+        //     console.log(name);
+        // }
+    var global=100;
+    function test(){
+       var global=200;
+        console.log(arguments);
+    }
+    test();
+    </script>
+</body>
+</html>

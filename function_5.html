@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0%;
+        padding:0;
+
+
+    }
+    ul{
+        list-style: none;
+
+    }
+    li:nth-of-type(2n){
+        background-color: red;
+    }
+    li:nth-of-type(2n+1){
+        background-color: aqua;
+    }
+
+</style>
+<body>
+    <ul>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+    </ul>
+    <h3 id="life">个人生活</h3>
+
+    <script>
+        //闭包  把里面的函数保存到外部。
+        // function test() {
+        //     var arr = [];
+        //     for (var i = 0; i < 10; i++) {
+        //         (function(j){
+        //             arr[j]=function(){
+        //                  document.write(j);
+        //             }
+        //         }(i))
+            
+        //       }
+        //     return arr;
+        // }
+        // var myR = test();
+        // for(var j=0;j<10;j++){
+        //     myR[j]();
+        // }
+        // function test(){
+        //     var liCollection=document.getElementsByTagName('li');
+        //     for(var i=0;i<liCollection.length;i++){
+        //         (function(j){
+        //             liCollection[j].onclick=function(){
+        //             console.log(j);
+        //             }
+
+        //         }(i))
+        //     }
+        // }
+        // test();
+         
+         function Base(){
+             this.m=function(){
+                 return "Base";
+             };
+             this.a=this.m();
+             this.b=this.m;
+             this.c=function(){
+                 return this.m();
+             }
+         }
+
+         function F(){
+             this.m=function(){
+                 return "F";
+             }
+         }
+         F.prototype=new Base();
+         var f=new F();
+         alert(f.a);    //Base
+         alert(f.b());  //Base
+         alert(f.c());  //F
+
+     
+        
+    </script>
+</body>
+
+</html>

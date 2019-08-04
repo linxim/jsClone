@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var s='script language="javascript" type="text/javascript"';
+        // var f=function($1,$2,$3){
+        //     return $2.toUpperCase()+$3;
+        // }
+        // document.write(s.replace(/\b(\w)(\w*)\b/g,f))
+        // var s='script language="javascript" type="text/javascript"';
+        // var f=function(){
+        //     return arguments[1].toUpperCase()+arguments[2];
+
+        // }
+        //       document.write(s.replace(/\b(\w)(\w*)\b/g,f))
+
+
+        // var s='script language="javascript" type="text/javascript"';
+        // var f=function(){
+        //     for(var i=0;i<arguments.length;i++){
+        //         alert("第"+(i+1)+"个参数的值："+arguments[i]);
+        //     }
+
+        // }
+        //       document.write(s.replace(/\b(\w)(\w*)\b/g,f))
+
+        var s = "张三 56分，李四 74分，王五92分，赵六84分";
+        var a = s.match(/(\d+)分/g), sum = 0;
+        for (var i = 0; i < a.length; i++) {
+            sum += parseFloat(a[i]);
+        };
+        var avg = sum / a.length;
+        function f() {
+            var n = parseFloat(arguments[1]);
+            return n + "分" + "("+((n>avg)?("超出平均分"+(n-avg)):("低于平均分"+(avg-n)))+"分)";
+        }
+        var s1=s.replace(/(\d+)分/g,f);
+        document.write(s1);
+
+        
+    </script>
+</body>
+
+</html>

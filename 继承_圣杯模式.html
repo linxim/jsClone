@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>继承</title>
+</head>
+<script>
+    // Grand.prototype.lastName="yu";
+    // function Grand(){
+
+    // }
+    // var grand=new Grand();
+
+    // Father.prototype=grand;
+    // function Father(){
+    //     this.name='hehe';
+    // }
+    // var father=new Father();
+
+    // Son.prototype=father;
+    // function Son(){
+
+    // }
+    // var son=new Son();
+
+//    Father.prototype.lastName="Deng";
+//    function Father(){
+
+//    }
+//    function Son(){
+
+//    }
+//    Son.prototype=Father.prototype
+//    var son=new Son();
+//    var father=new Father();
+
+//    Father.prototype.lastName="Deng";
+//    function Father(){
+
+//    }
+//    function Son(){
+
+//    }
+//    function inherit(Target,Origin){
+//        Target.prototype=Origin.prototype;    
+//    }
+//    inherit(Son,Father);
+//    Son.prototype.sex="male";   //当son在添加东西时,father也会跟着改变，因为都是用的一个地址
+//    var son=new Son();
+//    var father=new Father();
+   //圣杯模式
+   function inherit(Target,Origin){
+       function F(){};
+       F.prototype=Origin.prototype;
+       Target.prototype=new F();
+
+       Target.prototype.constuctor=Target;
+       Target.prototype.uber=Origin.prototype;
+   }
+   Father.prototype.lastName="Deng";
+   function Father(){}
+   function Son(){}
+   inherit(Son,Father);
+   var son=new Son();
+   var father=new Father();
+
+</script>
+
+<body>
+    
+</body>
+
+</html>

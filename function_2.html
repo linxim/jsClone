@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function reversal() {
+            var num = parseInt(prompt('input'));  //转化为Int类型方便后面计算。
+            var cishu = 0;
+            var zuihou;
+            
+                for (var z =num; z > 1;) {
+                    zuihou = z%10;
+                    z = z / 10;
+                    cishu++;
+                    var str=translate(parseInt(zuihou));   //每次返回都会变成String，强转为Int;
+                    document.write(str);
+                    if (cishu ==1 &&zuihou == 0) {
+                        document.write("零");
+                    }
+                    if (cishu == 2 &&zuihou > 0) {
+                        document.write("十");
+                    }
+                    if (cishu ==3 &&zuihou > 0) {
+                        document.write("百");
+                    }
+                    if (cishu == 4&&zuihou > 0) {
+                        document.write("千");
+                    }
+                    
+                }
+
+
+            
+        }
+
+
+
+
+        reversal();
+        function translate(target) {
+            switch (target) {
+
+                case 1:
+                    return "壹";
+                case 2:
+                    return "贰";
+                case 3:
+                    return "叁";
+                case 4:
+                    return "肆";
+                case 5:
+                    return "伍";
+                case 6:
+                    return "陆";
+                case 7:
+                    return "柒";
+                case 8:
+                    return "捌";
+                case 9:
+                    return "玖";
+
+            }
+
+        }
+    </script>
+</body>
+
+</html>

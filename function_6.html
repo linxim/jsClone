@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // var a=5;
+        // function test(){
+        //     a=0;
+        //     alert(a);    //0     //0
+        //     alert(this.a);  //5  //undefined
+        //     var a;
+        //     alert(a);    //0    //0
+        // }
+        // test();            
+        // new test();//this.a的原始值。
+
+        // function employee(name,code){
+        //    this.name="wangli";
+        //     this.code="A001";
+
+        // }
+        // var newemp=new employee("zhangming",'A002');
+        // document.write("雇员姓名:"+newemp.name+"<br>"); //雇员姓名:zhangming
+        // document.write("雇员代码:"+newemp.code+"<br>"); //雇员代码:A002
+
+        //  function Person(name,age,sex){
+        //      var a=0;
+        //      this.name=name;
+        //      this.age=age;
+        //      this.sex=sex;
+        //      function sss(){
+        //          a++;
+        //          document.write(a); 
+        //      }
+        //      this.say=sss;
+        //  }   
+        //  var oPerson=new Person();
+        //  oPerson.say();  //1
+        //  oPerson.say();  //2
+        //  var oPerson1=new Person();  //全新的oPerson1
+        //  oPerson1.say();  //1
+
+        // function bb() {
+        //     var arr = [];
+        //     for (var i = 0; i < 10; i++) {
+        //         (arr[i] = function () {
+        //             document.write(i);
+        //         }(i));
+        //     }
+        //     return arr;
+        // }
+        // var arr1 = bb();
+        // for (var i = 0; i < 10; i++) {
+        //     arr1[i]; //10101010101010101010
+        // }                                                                                               
+
+        // var x=1,y=z=0;
+        // function add(n){
+        //     console.log(n);
+        //     return n=n+1;
+        // }
+        // y=add(x);
+        // console.log(y);
+        // function add(n){
+        //     console.log(n);   //只调用了这个函数
+        //     return n=n+3;
+        // }
+        // z=add(x);
+        // console.log(z);
+
+        function test() {
+
+            var count = 0;
+            for (var i = 0; i < str.length; i++) {
+                count++;
+                if (str.charCodeAt(i) > 255) {
+                    count++;
+                }
+            }
+            return count;
+        }
+        var str = "哈喽ello word!";
+        document.write(test());
+    </script>
+</body>
+
+</html>

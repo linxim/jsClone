@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JavaScript 字符串方法</h1>
+    <p>把字符串转换为大写:</p>
+    <button onclick="myFunction()">试一试</button>
+    <button onclick="myFunction1()">还原</button>
+    <p id="demo">Hello World!</p>
+    <script>
+       function myFunction(){
+           var text=document.getElementById("demo").innerHTML;
+           document.getElementById("demo").innerHTML=text.toUpperCase();
+       }
+       function myFunction1(){
+           var text=document.getElementById("demo").innerHTML;
+           var zero=text.toLowerCase();
+           var f=function($1){
+                    return $1.substring(0,1).toUpperCase()+$1.substring(1);
+           }
+           document.getElementById("demo").innerHTML=zero.replace(/(\b\w+\b)/g,f);
+           
+
+       }
+       
+
+    </script>
+</body>
+
+</html>

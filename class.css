@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    /* 径向渐变 background-image*/
+    background: radial-gradient(circle at center center,rgba(244,23,223,0.2),rgb(0,0,0));
+    /* 底层为黑色 */
+    background-color: #000;
+    overflow: hidden;
+}
+.wrapper{
+    /* 舞台深度(景深) */
+    perspective: 1000px;
+    
+}
+.box{
+    position: relative;
+    width: 120px;
+    height: 180px; 
+    margin: 200px auto;
+    /* 2D转3D */
+    transform-style: preserve-3d;
+
+}
+.box img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* 倒影 */
+    /* left below  above*/
+    -webkit-box-reflect: below 10px -webkit-linear-gradient(top,rgba(0,0,0,0) 40%,rgba(0,0,0,0.5) 100%);
+
+}

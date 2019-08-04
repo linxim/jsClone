@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function type(target){}
+        var arr=[1,1,1,1,1,1,1,,2,,2,2,2,2,2];
+        // var obj={
+        //     "1":'abc',
+        //     "8":'abc',
+        //     "9":'abc'
+        // }
+            Array.prototype.unique=function(){
+                var temp={};
+                var arr=[];
+                len=this.length;
+                for(var i=0;i<len;i++){
+                    if(!temp[this[i]])
+                    {
+                        temp[this[i]]='abc';
+                        arr.push(this[i]);
+                    }
+                }
+                return arr;
+            }
+        
+    </script>
+</body>
+</html>

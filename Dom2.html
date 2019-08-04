@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var div=document.createElement('div');
+        document.body.appendChild(div);
+        div.style.width="100px";
+        div.style.height="100px";
+
+        div.style.backgroundColor="red";
+        div.style.position="absolute";
+        div.style.left="0";
+        div.style.top="0";
+        
+        var speed=1;
+        //定时器
+        var timer=setInterval(function(){
+            speed+=1;
+            div.style.left=parseInt(div.style.left)+speed+"px";
+            if(parseInt(div.style.left)>100){
+                clearInterval(timer);  //让定时器停止
+            }
+        },100);
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //立即执行函数，一次性，可以返回，具备函数所有特性。
+        // (function a(){
+        //     var a=123;
+        //     var b=234;
+        //     console.log(a+b);
+        // }())
+
+        // (function (x,y,z){
+        //     var a=123;
+        //     var b=234;
+        //     console.log(x+y+z);
+        // }(1,5,2))
+
+            //只有表达式才能被执行符号执行。
+            // function a(){
+            // }()
+
+            // var fo=function(){
+            //     console.log('a');
+            // }()
+            //符号使函数变成表达式
+                // +function test(){
+                //     console.log('a');
+                // }();
+            
+            //立即执行函数 由于test没用处，可以删除。
+            (function test(){console.log('a');}())
+    </script>
+</body>
+</html>

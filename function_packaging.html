@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 给所有的a标签加上一个target="_blank" 作用是在新页面打开网页 -->
+    <base target="_blank" />
+</head>
+<style>
+    a {
+        text-decoration: none;
+        color: black;
+    }
+</style>
+
+<body>
+    <a href="http://www.baidu.com" target="_blank">百度</a>
+    <a href="http://www.sina.com.cn/">新浪</a>
+    <!-- 页面跳转到id="life" 的位置 -->
+    <a href="function_5.html#life">个人生活</a>
+    <p>1</p>
+    
+    
+    <p>1</p>
+    <script>
+
+        var str = "abc";
+        str += 1;
+        var test = typeof (str);//string
+        if (test.length == 6) {
+            console.log(test.length);   //6
+            test.sign = "typeof的返回结果可能为String";
+            console.log(test.sign); //undefined
+        }
+        console.log(test.sign);  //undefined
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            width: 300px;
+            height: 300px;
+            background-color: antiquewhite;
+        }
+        .content{
+            display: none;
+            width: 100px;
+            height: 100px;
+            border: 2px solid ;
+        }
+        .active{
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <button class="active">111</button>
+        <button>222</button>
+        <button>333</button>
+        <div class="content" style="display: block">你叫什么名字</div>
+        <div class="content">无敌</div>
+        <div class="content">！</div>
+    </div>
+    <script>
+       var btn=document.getElementsByTagName('button');
+        var qie=document.getElementsByClassName('content');
+        for(var i=0;i<btn.length;i++){
+            
+            (function (n){
+                btn[n].onclick=function(){
+               
+                for(var j=0;j<btn.length;j++){
+                    btn[j].className="";
+                    qie[j].style.display="none";
+                     }
+                this.className="active";
+                qie[n].style.display="block";
+                
+            }
+        }(i));
+    }
+    </script>
+</body>
+
+</html>

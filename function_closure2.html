@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //闭包的作用，obj中的food都是使用eater中foodAO
+        function eater(){
+            var food=" fruit";
+            var obj={
+                eat:function(){
+                    console.log(" i am eating"+food);
+                    food="";
+                },
+                push:function(myFood){
+                    food=myFood;
+                }
+            }
+            return obj;
+        }
+        var eater1=eater();    //i am eating fruit
+        eater1.eat();            
+        eater1.push("apple");
+        eater1.eat();
+    </script>
+</body>
+</html>

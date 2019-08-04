@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //使用call 在Student中引用person中的对象？
+        //   function Person(name,age,sex){
+        //       this.name=name;
+        //       this.age=age;
+        //       this.sex=sex;
+        //   }
+        //   function Student(name,age,sex,tel,grade){
+        //     Person.call(this,name,age,sex);
+        //       this.tel=tel;
+        //       this.grade=grade;
+        //   }
+        //   var student=new Student('girld',20,'male',131,2016);
+
+        function Wheel(whellSize, style) {
+            this.style = style;
+            this.whellSize = whellSize;
+        }
+        function Sit(c,sitColor) {
+            this.c = c;
+            this.sitColor = sitColor;
+        }
+        function Model(height, width, len) {
+            this.height = height;
+            this.width = width;
+            this.len = len;
+        }
+        function Car(whellSize, style,c,sitColor,height, width, len) {
+            Wheel.call(this,whellSize,style);
+            Sit.call(this,c,sitColor);
+            Model.call(this,height,width,len);
+        }
+        var car = new Car(100,'华丽','贵','red',1.5,3,5);
+    </script>
+</body>
+
+</html>
